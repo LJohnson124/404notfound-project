@@ -63,10 +63,11 @@ img {
 
 button {
     background-color: black;
-    font-family: 'Space Mono', sans-serif;
     color: white;
+    font-family: 'Space Mono', sans-serif;
     padding: 20px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .copyright {
