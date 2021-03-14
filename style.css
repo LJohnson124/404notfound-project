@@ -104,11 +104,10 @@ button {
 
     .container {
         display: block;
-        width: 300px;
+        max-width: 300px;
     }
     
     .container h2 {
-        width: 300px;
         font-size: 30px;
         margin-bottom: 20px;
     }
