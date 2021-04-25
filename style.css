@@ -10,6 +10,10 @@
     --copyright-color: #7c7c7c;
 }
 
+body {
+    margin: 0;
+}
+
 img {
     width: 100%;
 }
@@ -90,8 +94,8 @@ a button {
 
 @media (min-width: 780px) {
     body {
-        padding: 0 40px;
-        padding-left: 20px;
+        padding: 0 90px;
+        padding-left: 30px;
     }
 
     .title {
