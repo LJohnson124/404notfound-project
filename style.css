@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --paragraph-color: #474747;
@@ -6,122 +10,118 @@
     --copyright-color: #7c7c7c;
 }
 
-body {
-    font-family: 'Space Mono', sans-serif;
-    margin: 0;
-    padding: 0; 
-    /* height: 100vh; */
-}
-
-main {
-    padding: 10px;
-    margin: 10px;
-}
-
-.title {
-    display: flex;
-    justify-content: left;
-    font-size: 15px;
-    font-family: 'Inconsolata', sans-serif;
-    color: var(--heading-color);
-    margin-top: 0;
-}
-
 img {
     width: 100%;
 }
 
-.image {
-    width: 80%;
-    margin-left: 60px;
-}
-
-.container {
-    display: block;
-    width: 400px;
-}
-
-.container h2 {
-    width: 600px;
-    font-size: 3.5rem;
-    margin-bottom: 40px;
-    color: var(--heading-color);
+.title {
+    grid-area: title;
+    font-family: 'Inconsolata', sans-serif;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* grid-column: 1 / span 2; */
-    gap: 20px;
-}
-
-.container p {
-    font-size: 1.25rem;
-    margin-bottom: 50px;
-    color: var(--paragraph-color);
-}
-
-button {
-    background-color: black;
-    color: white;
+    grid-area: main-content;
     font-family: 'Space Mono', sans-serif;
-    padding: 20px;
-    font-size: 15px;
-    cursor: pointer;
+}
+
+.image {
+    grid-area: img;
+}
+
+.container {
+    grid-area: container-content;
+}
+
+.grid-container h2 {
+    font-weight: 700;
+}
+
+a button {
+    font-family: 'Space Mono', sans-serif;
+    font-size: 14px;
+
+    background-color: #333333;
+    padding: 24px 44px;
+    color: #fff;
+    outline: none;
 }
 
 .copyright {
+    grid-area: copyright;
     font-family: 'Montserrat', sans-serif;
-    color: var(--copyright-color);
-    display: flex;
-    justify-content: center;
-    margin-top: 75px;
+    color:#BDBDBD;
+    font-weight: 700;
+    text-align: center;
 }
 
-@media only screen and (max-width: 360px) {
-    main {
-        display: block;
+@media (max-width: 780px) {
+    body {
+        display: grid;
+        /* height: 100vh; */
+        grid-template-areas: 
+            "title"
+            "main-content"
+            "copyright";
+        padding: 0 24px;
     }
 
     .title {
-        display: flex;
-        justify-content: left;
-        font-size: 10px;
+        font-size: 16px;
+        font-weight: bold;
     }
 
-    img {
-        width: 100%;
+    .grid-container h2 {
+        font-size: 48px;
+    }
+
+    .grid-container p {
+        font-size: 18px;
+        margin-bottom: 72px;
+    }
+
+    a button {
+        margin-bottom: 120px;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 780px) {
+    body {
+        padding: 0 40px;
+        padding-left: 20px;
+    }
+
+    .title {
+        font-size: 12px;
+        padding-bottom: 100px;
     }
 
     .image {
         width: 50%;
-        margin-left: 10px;
+        margin-right: 100px;
     }
 
     .grid-container {
-        display: block;
+        width: 100%;
+        display: flex;
     }
 
     .container {
-        display: block;
-        max-width: 300px;
-    }
-    
-    .container h2 {
-        font-size: 30px;
-        margin-bottom: 20px;
+        width: 50%;
     }
 
-    .container p {
-        font-size: 15px;
-        margin-bottom: 25px;
+    h2 {
+        font-size: 56px;
     }
 
-    .copyright {
-        display: flex;
-        justify-content: center;
-        margin-top: 75px;
-        font-size: 12px;
-        width: fit-content;
+    p {
+        margin-bottom: 100px;
+    }
+
+    a button {
+        margin-bottom: 240px;
     }
 }
